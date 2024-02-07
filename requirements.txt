@@ -1,2 +1,9 @@
-martor
-gunicorn
+django
+djangorestframework
+pyyaml
+requests
+django-cors-headers
+google-api-python-client 
+google-auth-httplib2 
+google-auth-oauthlib
+psycopg2-binary

@@ -1,15 +1,22 @@
 import requests
 import datetime
 
+import os
+
 from getpass import getpass
 
-endpoint = 'http://127.0.0.1:8000/auth/'
-# password = getpass()
+from dotenv import load_dotenv
 
-auth_response = requests.post(endpoint, json={"username": 'calum', "password": 'M21Supressed&!'})
+load_dotenv()
+
+endpoint = 'http://127.0.0.1:8000/auth/'
+
+auth_response = requests.post(endpoint, json={"username": 'calum', "password": os.getenv('CALUM_PASSWORD')})
 print(auth_response.json())
 
 token = auth_response.json()['token']
+
+print(os.getenv('GOOGLE_CREDENTIALS'))
 
 endpoint = 'http://127.0.0.1:8000/tasks'
 

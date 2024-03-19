@@ -20,8 +20,9 @@ from django.urls import include, path
 from rest_framework.authtoken.views import obtain_auth_token
 
 
-urlpatterns = [       
-    path ('auth/', obtain_auth_token),
-    path('admin', admin.site.urls),
-    path('', include("speeday_app.urls"))
+urlpatterns = [
+    # path ('auth/', obtain_auth_token),
+    path('admin/', admin.site.urls),
+    path('google/', include("google_client.urls")),
+    path('', include("speeday_app.urls")),
 ]
